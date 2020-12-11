@@ -1,0 +1,40 @@
+{% set version = "0.5.0" %}
+
+package:
+  name: tensorflow-model-optimization
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/tensorflow/model-optimization.git
+  git_rev: v{{ version }}
+
+build:
+  number: 1
+  string: _py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
+  
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - bazel {{ bazel }}
+  host:
+    - git >=2.2
+    - python  {{ python }}
+    - tensorflow-base {{ tensorflow }}
+  run:
+    - python  {{ python }}
+    - tensorflow-base {{ tensorflow }}
+
+about:
+  home: https://www.tensorflow.org/model-optimization/
+  license: Apache-2.0
+  license_family: Apache
+  license_file: {{ SRC_DIR }}/LICENSE
+  summary: "A library that to optimize TensorFlow models for deployment and execution."
+  description: |
+    The TensorFlow Model Optimization Toolkit is a suite of tools that users, both novice and advanced, 
+    can use to optimize machine learning models for deployment and execution.
+
+extra:
+  recipe-maintainers:
+    - open-ce/open-ce-dev-team
