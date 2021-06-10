@@ -9,7 +9,7 @@ source:
   git_rev: v{{ version }}
 
 build:
-  number: 2
+  number: 3
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
   
 requirements:
@@ -17,10 +17,16 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - bazel {{ bazel }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - git >=2.2
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
