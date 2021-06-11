@@ -31,6 +31,12 @@ requirements:
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
 
+test:
+  requires:
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
+
 about:
   home: https://www.tensorflow.org/model-optimization/
   license: Apache-2.0
