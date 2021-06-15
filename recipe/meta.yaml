@@ -9,21 +9,33 @@ source:
   git_rev: v{{ version }}
 
 build:
-  number: 2
+  number: 3
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
+  ignore_run_exports:
+    - libgcc-ng
+    - libstdcxx-ng
   
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - bazel {{ bazel }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   host:
     - git >=2.2
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
 
 about:
   home: https://www.tensorflow.org/model-optimization/
