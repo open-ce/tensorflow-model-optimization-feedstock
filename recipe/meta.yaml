@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: tensorflow-model-optimization
@@ -21,9 +21,11 @@ requirements:
     - git >=2.2
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
+    - dm-tree {{ dm_tree }}
   run:
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
+    - dm-tree {{ dm_tree }}
 
 about:
   home: https://www.tensorflow.org/model-optimization/
