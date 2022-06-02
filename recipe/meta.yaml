@@ -14,8 +14,8 @@ build:
   
 requirements:
   build:
-    - {{ compiler('c') }}         #[ppc_arch != 'p10']
-    - {{ compiler('cxx') }}       #[ppc_arch != 'p10']
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - bazel {{ bazel }}
   host:
     - git >=2.2
