@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: tensorflow-model-optimization
@@ -14,8 +14,8 @@ build:
   
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}     #[ppc_arch != 'p10']
+    - {{ compiler('cxx') }}   #[ppc_arch != 'p10']
     - bazel {{ bazel }}
   host:
     - git >=2.2
