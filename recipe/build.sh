@@ -16,9 +16,8 @@
 # *****************************************************************
 set -vex
 
+source open-ce-common-utils.sh
 
-bazel clean --expunge
-bazel shutdown
 export BAZEL_LINKLIBS=-l%:libstdc++.a
 
 bazel build --copt=-O3 :pip_pkg
@@ -35,5 +34,6 @@ pip install --no-deps $SRC_DIR/tensorflow_model_optimization_pkg/*.whl
 echo "PREFIX: $PREFIX"
 echo "RECIPE_DIR: $RECIPE_DIR"
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
