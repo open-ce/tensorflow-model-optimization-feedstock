@@ -1,4 +1,4 @@
-{% set version = "0.7.4" %}
+{% set version = "0.7.5" %}
 
 package:
   name: tensorflow-model-optimization
@@ -11,7 +11,7 @@ source:
     - 0001-Update-dist-info-for-absl-py.patch
 
 build:
-  number: 2
+  number: 1
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
   
 requirements:
