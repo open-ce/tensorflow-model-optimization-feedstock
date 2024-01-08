@@ -1,6 +1,6 @@
-From 6efba1bba7936d4a0975d9ad6bb40e72ab3e8008 Mon Sep 17 00:00:00 2001
-From: Nishidha Panpaliya <npanpa23@in.ibm.com>
-Date: Mon, 19 Jun 2023 05:47:42 +0000
+From 6a8f73caa562efd0a35c802e6cfa15b74ea3744a Mon Sep 17 00:00:00 2001
+From: ArchanaShinde1 <archana.shinde2504@gmail.com>
+Date: Mon, 8 Jan 2024 09:21:28 +0000
 Subject: [PATCH] Update dist info for absl py
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH] Update dist info for absl py
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index 9f26fcc..8a26b5d 100644
+index 9f26fcc..fd5b640 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -33,7 +33,7 @@ from version import __version__  # pylint: disable=g-import-not-at-top
@@ -16,10 +16,10 @@ index 9f26fcc..8a26b5d 100644
  # us (and our dependents) to maintain a single package instead of two.
  REQUIRED_PACKAGES = [
 -    'absl-py~=1.2',
-+    'absl-py~=1.0',
++    'absl-py~=2.0.0',
      'numpy~=1.23',
      'six~=1.14',
      'enum34~=1.1;python_version<"3.4"',
 -- 
-2.34.1
+2.40.1
 
