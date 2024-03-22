@@ -28,6 +28,10 @@ requirements:
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
     - dm-tree {{ dm_tree }}
+  test:
+    imports:
+      - tensorflow
+      - tensorflow_model_optimization
 
 about:
   home: https://www.tensorflow.org/model-optimization/
