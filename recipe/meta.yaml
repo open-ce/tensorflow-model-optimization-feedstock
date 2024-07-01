@@ -11,7 +11,7 @@ source:
     - 0001-Update-dist-info-for-absl-py.patch
 
 build:
-  number: 2
+  number: 3
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
   
 requirements:
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('cxx') }}   #[ppc_arch != 'p10']
     - bazel {{ bazel }}
   host:
-    - git >=2.2
+    - git >=2.2 # [not x86_64]
     - python  {{ python }}
     - tensorflow-base {{ tensorflow }}
     - dm-tree {{ dm_tree }}
